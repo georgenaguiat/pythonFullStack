@@ -9,9 +9,9 @@
 <body>
     <h1>Checker Board!!</h1>
     <table>
-    {% for checker in range(12): %}
+    {% for checker in range(rows): %}
         <tr>
-            {% for i in range(12): %}
+            {% for i in range(rows): %}
             <td class="color{{ (i+checker)%2+1 }}"></td>
             {% endfor %}
         </tr>

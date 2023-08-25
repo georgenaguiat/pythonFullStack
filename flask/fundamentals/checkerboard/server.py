@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def checker():
-    return render_template('checkerboard.html')
+    return render_template('checkerboard.html', rows=8)
 
 @app.route('/<int:x>')
 def checker_box(x):
