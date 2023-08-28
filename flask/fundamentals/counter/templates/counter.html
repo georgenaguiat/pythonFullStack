@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>Counter Assignment</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Counter</h1>
+        <p><h3>{{ session['counter'] }}</h3></p>
+        <a href="/count/1" class="btn">Click</a>
+        <a href="/destory_session" class="btn">Reset</a>
+    </div>
+    
+</body>
+</html>
