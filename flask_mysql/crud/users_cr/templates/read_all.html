@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <title>User CR</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>All Users</h1>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr class="table p-3 mb-2 bg-primary text-white text-warning">
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for every_user in users %}
+                <tr>
+                    <td>{{ every_user['id'] }}</td>
+                    <td>{{ every_user['first_name'] }} {{ every_user['last_name']}}</td>
+                    <td>{{ every_user['email'] }}</td>
+                    <td>{{ every_user['created_at'].strftime('%B %d, %Y') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/create">Add a New User</a>
+    </body>
+</html>
