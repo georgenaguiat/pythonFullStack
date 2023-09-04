@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1>Edit {{edit_user['first_name']}}</h1>
+            <div>
+                <form class="bg-primary p-4 rounded" action="/user/update/{{edit_user.id}}" method="post">
+                    <div class="d-flex flex-column bd-highlight p-2 bd-highlight">
+                        <label for="first_name">First Name:</label>
+                        <input type="text" name="first_name" value="{{edit_user['first_name']}}">
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" name="last_name" value="{{edit_user['last_name']}}">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" value="{{edit_user['email']}}">
+                    </div>
+                    <input type="submit" value="Update" class="btn btn-warning btn-outline-dark">
+                    <a href="/user/show/{{edit_user.id}}" class="btn btn-secondary">Show User</a>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

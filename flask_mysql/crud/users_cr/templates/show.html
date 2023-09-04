@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1>User {{get_user['id']}}</h1>
+            <div>
+                <p>Full Name: {{ get_user['first_name'] }} {{ get_user['last_name'] }}</p>
+                <p>Email: {{ get_user['email'] }}</p>
+                <p>Created On: {{ get_user['created_at'].strftime('%B %d, %Y') }}</p>
+                <p>Last Updated On: {{ get_user['updated_at'].strftime('%B %d, %Y at %I:%M %p') }}</p>
+            </div>
+            <a href="/user/edit/{{get_user.id}}" class="btn btn-success">Edit</a>
+            <a href="/user/delete/{{get_user.id}}" class="btn btn-danger">DELETE</a>
+            <a href="/" class="btn bg-info text-white">Home</a>
+        </div>
+    </body>
+</html>
