@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Dojo Show</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>{{ get_dojo.name }}</h1>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr class="table bg-primary text-white text-warning">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for every_ninja in get_ninjas %}
+                <tr>
+                    <td>{{ every_ninja.first_name }}</td>
+                    <td>{{ every_ninja.last_name }}</td>
+                    <td>{{ every_ninja.age }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/" class="btn bg-info text-white">Home</a>
+    </div>
+</body>
+</html>

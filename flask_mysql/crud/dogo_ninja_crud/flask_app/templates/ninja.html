@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>New Ninja</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container mt-5">
+            <form action="/ninja/create" method="post" class="p-4 rounded bg-dark text-light">
+                <div class="d-flex flex-column bd-highlight p-2 bd-highlight">
+                    <h1>New Ninja</h1>
+                    <label>Dojo:</label>
+                    <select name="dojo_id">
+                        {% for every_dojos in all_dojos %}
+                        <option value="{{every_dojos['id']}}"">{{every_dojos['name']}}</option>
+                        {% endfor %}
+                    </select>
+                        <label for="first_name">First Name:</label>
+                        <input type="text" name="first_name">
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" name="last_name">
+                        <label for="age">Age:</label>
+                        <input type="number" name="age">
+                </div>
+                <input type="submit" value="Add Ninja" class="btn btn-primary btn-outline-dark">
+                <a href="/" class="btn bg-info text-white">Home</a>
+            </form>
+        </div>
+    </body>
+</html>
